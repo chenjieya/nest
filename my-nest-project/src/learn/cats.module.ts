@@ -19,7 +19,7 @@ export class CatsModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
     consumer
       .apply(LoggerMiddleware, funcMiddleware)
-      .exclude({ path: 'cat', method: RequestMethod.GET })
+      .exclude({ path: 'cat', method: RequestMethod.POST })
       .forRoutes(CreateCatController);
   }
 }
